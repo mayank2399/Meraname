@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import static android.content.Intent.ACTION_CALL;
 
 public class user_loggedin extends AppCompatActivity {
-    Button lab,ambu,hos,book,chatuser,donate;
+    Button lab,ambu,hos,book,chatuser,donate,rmedi;
     EditText name,age,disease;
     FirebaseFirestore firestore;
     @Override
@@ -81,7 +81,14 @@ public class user_loggedin extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        rmedi=(Button)findViewById(R.id.retmedi);
+        rmedi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(user_loggedin.this,mediret.class);
+                startActivity(i);
+            }
+        });
         //
     }
 }

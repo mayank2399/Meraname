@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class home_act extends AppCompatActivity {
-Button log_doc,sign_doc,log_pat,sign_pat;
+Button log_doc,sign_doc,log_pat,sign_pat,admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +46,13 @@ Button log_doc,sign_doc,log_pat,sign_pat;
                 startActivity(i);
             }
         });
-
+        admin=(Button)findViewById(R.id.Admin);
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(home_act.this,Admin.class);
+                startActivity(i);
+            }
+        });
     }
 }
