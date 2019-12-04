@@ -57,13 +57,13 @@ Button login,forget;
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
-                {     firestore.collection("User").whereEqualTo("username",n)
+                {     firestore.collection("Doctor").whereEqualTo("type","confirm")
                         .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                 if(!task.getResult().getDocuments().isEmpty()) {
                                     Map m = task.getResult().getDocuments().get(0).getData();
-                                    Intent i=new Intent(log_doc.this,user_loggedin.class);
+                                    Intent i=new Intent(log_doc.this,doc_loggedin.class);
                                     i.putExtra("name",n);
                                     startActivity(i);
                                 }

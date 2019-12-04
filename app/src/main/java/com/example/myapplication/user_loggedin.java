@@ -9,17 +9,79 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import static android.content.Intent.ACTION_CALL;
 
 public class user_loggedin extends AppCompatActivity {
     Button lab,ambu,hos,book,chatuser,donate;
-
+    EditText name,age,disease;
+    FirebaseFirestore firestore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_loggedin);
+        Intent i=getIntent();
+        final String n=i.getStringExtra("name");
+        ambu=(Button)findViewById(R.id.ambul);
+        ambu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=restaurants");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+
+            }
+        });
+        hos=(Button)findViewById(R.id.hos);
+        hos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q=hospital");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+        book=(Button)findViewById(R.id.bookappoint);
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(user_loggedin.this,book.class);
+                i.putExtra("name",n);
+                startActivity(i);
+            }
+        });
+        chatuser=(Button)findViewById(R.id.chatuser);
+        chatuser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(user_loggedin.this,chatuser.class);
+                i.putExtra("name",n);
+                startActivity(i);
+            }
+        });
+        lab=(Button)findViewById(R.id.lab);
+        lab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(user_loggedin.this,labuser.class);
+                startActivity(i);
+            }
+        });
+        donate=(Button)findViewById(R.id.donate);
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(user_loggedin.this,donate.class);
+                startActivity(i);
+            }
+        });
+
         //
     }
 }
