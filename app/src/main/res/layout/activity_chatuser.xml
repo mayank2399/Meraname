@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".chatuser">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Chat with doctor:-"
+        android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/dname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:hint="Doctor name" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/getchat"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp"
+        android:text="get chat"/>
+
+    <EditText
+        android:id="@+id/chatdoc"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="110dp"
+        android:text="Doctors message"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/cahtboxuser"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="340dp"
+        android:hint="Type your message here"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="500dp"
+        android:background="@android:drawable/ic_menu_send" />
+</RelativeLayout>
