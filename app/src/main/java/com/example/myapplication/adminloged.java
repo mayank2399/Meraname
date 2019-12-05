@@ -35,6 +35,23 @@ Button bd,klr,nadmin,vd,lm;
                 startActivity(i);
             }
         });
-        
+        nadmin=(Button)findViewById(R.id.newadmin);
+        nadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(adminloged.this,createadmin.class);
+                startActivity(i);
+            }
+        });
+        lm=(Button)findViewById(R.id.labtest);
+        lm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(adminloged.this,lab.class);
+                startActivity(i);
+
+            }
+        });
+
     }
 }

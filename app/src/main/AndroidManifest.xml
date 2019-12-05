@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mediret"></activity>
+        <activity android:name=".lab"></activity>
+        <activity android:name=".createadmin" />
+        <activity android:name=".mediret" />
         <activity android:name=".leftmedi" />
         <activity android:name=".blooddonor" />
         <activity android:name=".adminloged" />

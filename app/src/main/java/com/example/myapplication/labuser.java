@@ -55,6 +55,7 @@ public class labuser extends AppCompatActivity {
                 m.put("age", a);
                 m.put("contact", c);
                 m.put("disease", d);
+                m.put("lab","T");
                 firestore.collection("lab").document(name.getText().toString()).set(m);
                 Toast.makeText(labuser.this, "Register for home lab test", Toast.LENGTH_LONG).show();
             }

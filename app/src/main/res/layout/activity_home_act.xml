@@ -12,10 +12,11 @@
         android:layout_width="280dp"
         android:layout_height="0dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="296dp"
-        android:layout_marginBottom="236dp"
-        android:background="@drawable/log_doc"
-        app:layout_constraintBottom_toTopOf="@+id/Admin"
+        android:layout_marginTop="72dp"
+
+        android:text="Login as doc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,8 +24,8 @@
         android:id="@+id/loginpat"
         android:layout_width="280dp"
         android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/log_user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +34,8 @@
         android:id="@+id/sign_user"
         android:layout_width="280dp"
         android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="268dp"
         android:background="@drawable/sign_doc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,8 +44,8 @@
         android:id="@+id/signuser"
         android:layout_width="280dp"
         android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="340dp"
         android:background="@drawable/log_doc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,11 +54,12 @@
         android:id="@+id/Admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="106dp"
         android:text="Admin"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/signuser"
-        app:layout_constraintTop_toBottomOf="@+id/log_doc" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,7 +51,7 @@ EditText name,pass;
                                         if(!task.getResult().getDocuments().isEmpty()) {
                                             Map m = task.getResult().getDocuments().get(0).getData();
                                             Intent i=new Intent(Admin.this,adminloged.class);
-                                            i.putExtra("name",n);
+                                            i.putExtra("username",n);
                                             startActivity(i);
                                         }
                                         else {
@@ -61,7 +61,7 @@ EditText name,pass;
                                 });
                         }
                         else {
-                            Toast.makeText(Admin.this, "Incorrect userneame or password", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Admin.this, "Incorrect username or password", Toast.LENGTH_LONG).show();
 
                         }
                     }
