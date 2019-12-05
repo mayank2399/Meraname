@@ -46,7 +46,8 @@ public class donate extends AppCompatActivity {
                 m.put("address",add);
                 m.put("age",a);
                 m.put("contact",c);
-                m.put("disease",d);
+                m.put("blood_group",d);
+                m.put("donate","T");
                 firestore.collection("donate").document(name.getText().toString()).set(m);
                 Toast.makeText(donate.this,"Register for blood donate",Toast.LENGTH_LONG).show();
 

@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -14,39 +16,40 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-public class blooddonor extends AppCompatActivity {
-    EditText et;
-    FirebaseFirestore firestore;
+public class drapprove extends AppCompatActivity {
+Button  veri;
+FirebaseFirestore firestore;
+TextView tf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blooddonor);
-        et = (EditText) findViewById(R.id.et);
+        setContentView(R.layout.activity_drapprove);
+        tf = (TextView) findViewById(R.id.et);
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection("donate").whereEqualTo("donate", "T").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        firestore.collection("Doctor").whereEqualTo("type","new").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (!task.getResult().getDocuments().isEmpty()) {
                     Map m = task.getResult().getDocuments().get(0).getData();
                     String s, t, u, v, w;
                     s = (String) m.get("name");
-                    t = (String) m.get("age");
-                    u = (String) m.get("address");
-                    v = (String) m.get("contact");
-                    w = (String) m.get("blood_group");
-                    et.setText("Name:-"+s+"\nAge-"+t+"\n"+"Contact:-"+v+"\n"+"Blood Group:-"+w+"\n"+"Address:-"+u);
+                    //t = (String) m.get("password");
+                    u = (String) m.get("speciality");
+                    v = (String) m.get("username");
+                    w = (String) m.get("disease");
+                    tf.setText("Name:-"+s+"\nSpeciality-"+u+"\n"+"Username"+v+"\n"+"Disease"+w);
                     Map<String, Object> may = new HashMap<>();
                     may.put("name", s);
-                    may.put("age", t);
-                    may.put("address", u);
-                    may.put("contact", v);
-                    may.put("blood_group", w);
-                    may.put("donate", "F");
+                    may.put("speciality", u);
+                    //may.put("address", u);
+                    may.put("username", v);
+                    may.put("disease", w);
+                    may.put("type", "confirm");
                     firestore.collection("lab").document(s).set(may);
 
                 }
                 else
-                { et.setText("No data");
+                { tf.setText("No data");
 
                 }
             }

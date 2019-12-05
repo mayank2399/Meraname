@@ -22,7 +22,7 @@ FirebaseFirestore firestore;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab2);
-         et = (EditText) findViewById(R.id.et);
+        et = (EditText) findViewById(R.id.et);
         firestore = FirebaseFirestore.getInstance();
         firestore.collection("lab").whereEqualTo("lab", "T").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -35,7 +35,7 @@ FirebaseFirestore firestore;
                     u = (String) m.get("address");
                     v = (String) m.get("contact");
                     w = (String) m.get("disease");
-                    et.setText(s);
+                    et.setText("Name:-"+s+"\nAge-"+t+"\n"+"Contact"+v+"\n"+"Disease"+w+"\n"+"Address-"+u);
                     Map<String, Object> may = new HashMap<>();
                     may.put("name", s);
                     may.put("age", t);
@@ -44,6 +44,10 @@ FirebaseFirestore firestore;
                     may.put("disease", w);
                     may.put("lab", "F");
                     firestore.collection("lab").document(s).set(may);
+
+                }
+                else
+                { et.setText("No data");
 
                 }
             }
