@@ -12,55 +12,68 @@
         android:layout_marginLeft="70dp"
         android:layout_marginTop="40dp"
         android:id="@+id/ambul"
+        android:text="Call Ambulane"
         android:layout_height="wrap_content"
-        android:background="@drawable/ambulance" />
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="250dp"
+        android:text="Search hospital"
         android:id="@+id/hos"
-        android:background="@drawable/hospital" />
+         />
 
     <Button
         android:id="@+id/bookappoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="150dp"
-        android:background="@drawable/book" />
+        android:text="Book appointment"
+        android:layout_marginTop="100dp"
+        />
 
     <Button
         android:id="@+id/chatuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="300dp"
-        android:background="@drawable/chat" />
+        android:layout_marginTop="100dp"
+        android:text="chat with docotor"
+        />
 
     <Button
         android:id="@+id/lab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
-        android:layout_marginTop="300dp"
-        android:background="@drawable/lab" />
+        android:layout_marginTop="180dp"
+        android:text="Home Lab test"
+         />
 
     <Button
         android:id="@+id/donate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/donate" />
+        android:layout_marginTop="180dp"
+        android:text="Donate blood"
+         />
     <Button
         android:id="@+id/retmedi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="250dp"
         android:text="Return medicine"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="250dp"
         />
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/hbeat"
+        android:layout_marginTop="280dp"
+        android:text="Send heart rate"
+/>
 </RelativeLayout>
